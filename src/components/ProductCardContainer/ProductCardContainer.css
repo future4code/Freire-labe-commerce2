@@ -1,0 +1,46 @@
+:root {
+  --cor-1: #11151C;
+  --cor-2: #212D40;
+  --cor-3: #364156;
+  --cor-4: #7D4E57;
+  --cor-5: #D66853;
+  --cor-6: #EDF2F4;
+  --cor-7: #acb3ba;
+
+  --sombra-cor: rgba(0, 0, 0, 0.500);
+
+  --borda-1: 10px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+  
+    width: 100%;
+    height: fit-content;
+  
+    padding: 5px 25px;
+  }
+
+.card-container > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: fit-content;
+
+    padding: 5px;
+}
+
+.card-container > ul > li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 15px;
+}

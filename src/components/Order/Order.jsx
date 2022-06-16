@@ -16,11 +16,11 @@ export const Order = ({ details }) => {
 
     
     let filteredProdutosAsc = () => details.sort(function(x,y){
-        return x.preco > y.preco?1:x.preco < y.preco?-1:0;
+        return x.price > y.price?1:x.price < y.price?-1:0;
     });
     
     let filteredProdutosDesc = () => details.sort(function(x,y){
-        return x.preco < y.preco?1:x.preco > y.preco?-1:0;
+        return x.price < y.price?1:x.price > y.price?-1:0;
     })
     
     filteredProdutosAsc();
