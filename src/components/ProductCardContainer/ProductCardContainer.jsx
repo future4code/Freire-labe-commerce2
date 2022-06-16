@@ -3,7 +3,7 @@ import './ProductCardContainer.css';
 
 import { ProductCard } from "./ProductCard";
 
-export const ProductCardContainer = ({details}) => {
+export const ProductCardContainer = ({details, cartList, setCartList}) => {
     /*  Esse component realiza as seguintes ações:
             Recebe os dados do produto (props) e o método de adicionar ao carrinho ();
             Renderiza o card com os dados do produto;
@@ -26,15 +26,15 @@ export const ProductCardContainer = ({details}) => {
         <div className='card-container'>
             <ul>
                 <li>
-                    {details.map(product => (
+                    {details.map((product) => (
                         <ProductCard
                             key={product.key}
-                            name={product.name} 
-                            price={product.price} 
-                            img={product.img} 
-                            description={product.description}
+                            product={product}
+
+                            cartList={cartList}
+                            setCartList={setCartList}
                         />
-                    ))}
+                    ))} 
                 </li>
             </ul>
         </div>
