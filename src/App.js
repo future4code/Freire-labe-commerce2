@@ -11,6 +11,8 @@ import { Search } from './components/Search/Search';
 
 
 
+import { ProductCard } from './components/ProductCard/ProductCard';
+
 function App() {
   
   const filterMin = 0
@@ -90,7 +92,7 @@ function inputFilterMin (event) {
 
 
         <div className='cards-container'>
-          {/*COMPONENTE 4 - Lucas*/}
+          {/*COMPONENTE 4 - Lucas
           <div className='card'>
             <div className='card-img'>
               <img src="https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp" alt="" />
@@ -98,7 +100,16 @@ function inputFilterMin (event) {
             <h3>Producto 1</h3>
             <h1>R$200,00</h1>
             <button>Comprar</button>
-          </div>
+          </div>*/}
+
+          <ProductCard
+            key={1}
+            name='T-shirt Space'
+            price='R$ 100,00'
+            img='https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp'
+            description='Camisa Preta com estampa do Stitch tocando guitarra'
+          />
+
         </div>
       </div>
 
