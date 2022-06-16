@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import  FiltroMinMax from './components/ProductCardContainer/Busca-Min-Max/FiltroMinMax';
-/* import React, {useState} from 'react'; */
+
 import { VscRocket } from 'react-icons/vsc';
 import { GiExplodingPlanet } from 'react-icons/gi';
 import { MdOutlineLocalGroceryStore } from 'react-icons/md';
+
 import { Search } from './components/Search/Search';
 import { Order } from './components/Order/Order';
+import { TbArrowsSort } from 'react-icons/tb';
+import  FiltroMinMax from './components/ProductCardContainer/Busca-Min-Max/FiltroMinMax';
 import { ProductCardContainer } from './components/ProductCardContainer/ProductCardContainer';
 import { Cart } from './components/Modal/Cart';
 
@@ -26,27 +28,30 @@ function App() {
 
   const initialDetails = [
     {
-      id: 1,
+      key: 1,
       img: "https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp",
       name: "Nike",
       price: "200,00",
       description: "Texto alt Nike"
     },
     {
-      id: 2,
+      key: 2,
       img: "https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp",
       name: "Adidas",
       price: "300,00",
       description: "Texto alt Adidas"
     },
     {
-      id: 3,
+      key: 3,
       img: "https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp",
       name: "Lacoste",
       price: "100,00",
       description: "Texto alt Lacoste"
     }
   ];
+
+  {/*Lista que armazena os produtos que foram comprados*/}
+  const [cartList, setCartList] = useState([]);
 
   return (
     <div className="App">
@@ -79,8 +84,17 @@ function App() {
           <TbArrowsSort />
         </div> */}
 
+        <ProductCardContainer 
+          details={initialDetails}
+          cartList={cartList} 
+          setCartList={setCartList}
+        />
 
-        <ProductCardContainer details={initialDetails} />
+        {/*TESTE CONSOLE.LOG*/}
+        <div>
+          {console.log(cartList)}
+        </div>
+
       </div>
 
       {/*Trigger que controla o botão do carrinho de compras*/}
@@ -94,7 +108,7 @@ function App() {
         </div>
       </footer>
 
-      <Cart />
+      <Cart cartList={cartList} setCartList={setCartList}/>
     </div>
   );
 }
