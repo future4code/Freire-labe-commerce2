@@ -11,21 +11,20 @@ import { Search } from './components/Search/Search';
 
 
 import { ProductCardContainer } from './components/ProductCardContainer/ProductCardContainer';
+import { Cart } from './components/Modal/Cart';
 
 function App() {
-  
+    
   const filterMin = 0
   const filterMax = 0
-  
+    
   function inputFilterMax (event) {
-    filterMax = event.target.value 
+    filterMax = event.target.value
+  }
 
-}
-
-function inputFilterMin (event) {
+  function inputFilterMin (event) {
     filterMin = event.target.value
-
-}
+  }
 
   const initialDetails = [
     {
@@ -50,6 +49,7 @@ function inputFilterMin (event) {
       description: "Texto alt Lacoste"
     }
   ];
+
   return (
     <div className="App">
       <header className="App-header">
@@ -65,22 +65,10 @@ function inputFilterMin (event) {
 
       <div className="App-body">
 
-        {/*COMPONENTE 1 - Rai*/}
-        <Search details={initialDetails} />
-        {/* <div className='search-input'>
-          <input type="text" placeholder='Pesquisar'/>
-        </div> */}
-
-        {/*COMPONENTE 2 - Muri*/}
-{/*          <div className='filter-card-value'>
-          <input type="number" placeholder='Valor mínimo'/>
-          <input type="number" placeholder='Valor máximo'/>
-        </div> */}
-        
-        
+        <Search details={initialDetails} />      
+          
         {/* INICIO CODIGO MURI */}
-
-          <FiltroMinMax inputFilterMin={inputFilterMin} filterMin={filterMin} inpultFilterMax={inputFilterMax} filterMax={filterMax}/>
+        <FiltroMinMax inputFilterMin={inputFilterMin} filterMin={filterMin} inpultFilterMax={inputFilterMax} filterMax={filterMax}/>
 
         {/*COMPONENTE 3*/}
         <div className='sort-select'>
@@ -107,9 +95,7 @@ function inputFilterMin (event) {
         </div>
       </footer>
 
-      <div className='App-modal-cart'>
-        <h1>Hello world!</h1>
-      </div>
+      <Cart />
     </div>
   );
 }

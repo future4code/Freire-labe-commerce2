@@ -32,7 +32,8 @@ export const ProductCardContainer = ({details}) => {
                             name={product.name} 
                             price={product.price} 
                             img={product.img} 
-                            description={product.description} />
+                            description={product.description}
+                        />
                     ))}
                 </li>
             </ul>
