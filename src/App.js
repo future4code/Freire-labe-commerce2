@@ -1,13 +1,31 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import  FiltroMinMax from './components/ProductCard/Busca-Min-Max/FiltroMinMax';
+/* import React, {useState} from 'react'; */
 import { VscRocket } from 'react-icons/vsc';
 import { GiExplodingPlanet } from 'react-icons/gi';
 import { MdOutlineLocalGroceryStore } from 'react-icons/md';
 import { TbArrowsSort } from 'react-icons/tb';
 
+
+
 function App() {
+  
+  const filterMin = 0
+  const filterMax = 0
+  
+  function inputFilterMax (event) {
+    filterMax = event.target.value 
+
+}
+
+function inputFilterMin (event) {
+    filterMin = event.target.value
+
+}
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -29,10 +47,15 @@ function App() {
         </div>
 
         {/*COMPONENTE 2 - Muri*/}
-        <div className='filter-card-value'>
+{/*          <div className='filter-card-value'>
           <input type="number" placeholder='Valor mínimo'/>
           <input type="number" placeholder='Valor máximo'/>
-        </div>
+        </div> */}
+        
+        
+        {/* INICIO CODIGO MURI */}
+
+          <FiltroMinMax inputFilterMin={inputFilterMin} filterMin={filterMin} inpultFilterMax={inputFilterMax} filterMax={filterMax}/>
 
         {/*COMPONENTE 3*/}
         <div className='sort-select'>
