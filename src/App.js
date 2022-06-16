@@ -5,9 +5,10 @@ import './App.css';
 import { VscRocket } from 'react-icons/vsc';
 import { GiExplodingPlanet } from 'react-icons/gi';
 import { MdOutlineLocalGroceryStore } from 'react-icons/md';
-import { TbArrowsSort } from 'react-icons/tb';
 
 import { Search } from './components/Search/Search';
+import { Order } from './components/Order/Order';
+import { TbArrowsSort } from 'react-icons/tb';
 import  FiltroMinMax from './components/ProductCardContainer/Busca-Min-Max/FiltroMinMax';
 import { ProductCardContainer } from './components/ProductCardContainer/ProductCardContainer';
 import { Cart } from './components/Modal/Cart';
@@ -73,14 +74,15 @@ function App() {
         <FiltroMinMax inputFilterMin={inputFilterMin} filterMin={filterMin} inpultFilterMax={inputFilterMax} filterMax={filterMax}/>
 
         {/*COMPONENTE 3*/}
-        <div className='sort-select'>
+        <Order  details={initialDetails} />
+        {/* <div className='sort-select'>
           <select>
             <option value="">Crescente</option>
             <option value="">Decrescente</option>
           </select>
 
           <TbArrowsSort />
-        </div>
+        </div> */}
 
         <ProductCardContainer 
           details={initialDetails}
