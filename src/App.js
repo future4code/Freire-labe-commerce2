@@ -22,15 +22,19 @@ function App() {
       </header>
 
       <div className="App-body">
+
+        {/*COMPONENTE 1 - Rai*/}
         <div className='search-input'>
           <input type="text" placeholder='Pesquisar'/>
         </div>
 
+        {/*COMPONENTE 2 - Muri*/}
         <div className='filter-card-value'>
           <input type="number" placeholder='Valor mínimo'/>
           <input type="number" placeholder='Valor máximo'/>
         </div>
 
+        {/*COMPONENTE 3*/}
         <div className='sort-select'>
           <select>
             <option value="">Crescente</option>
@@ -40,29 +44,14 @@ function App() {
           <TbArrowsSort />
         </div>
 
+
         <div className='cards-container'>
+          {/*COMPONENTE 4 - Lucas*/}
           <div className='card'>
             <div className='card-img'>
               <img src="https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp" alt="" />
             </div>
             <h3>Producto 1</h3>
-            <h1>R$200,00</h1>
-            <button>Comprar</button>
-          </div>
-
-          <div className='card'>
-            <div className='card-img'>
-              <img src="https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp" alt="" />
-            </div>
-            <h3>Producto 1</h3>
-            <h1>R$200,00</h1>
-            <button>Comprar</button>
-          </div>
-
-          <div className='card'>
-            <div className='card-img'>
-              <img src="https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp" alt="" />
-            </div><h3>Producto 1</h3>
             <h1>R$200,00</h1>
             <button>Comprar</button>
           </div>
