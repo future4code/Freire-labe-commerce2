@@ -6,12 +6,12 @@ import  FiltroMinMax from './components/ProductCard/Busca-Min-Max/FiltroMinMax';
 import { VscRocket } from 'react-icons/vsc';
 import { GiExplodingPlanet } from 'react-icons/gi';
 import { MdOutlineLocalGroceryStore } from 'react-icons/md';
-import { TbArrowsSort } from 'react-icons/tb';
 import { Search } from './components/Search/Search';
 
 
 
 import { ProductCard } from './components/ProductCard/ProductCard';
+import { Order } from './components/Order/Order';
 
 function App() {
   
@@ -81,14 +81,15 @@ function inputFilterMin (event) {
           <FiltroMinMax inputFilterMin={inputFilterMin} filterMin={filterMin} inpultFilterMax={inputFilterMax} filterMax={filterMax}/>
 
         {/*COMPONENTE 3*/}
-        <div className='sort-select'>
+        <Order  details={initialDetails} />
+        {/* <div className='sort-select'>
           <select>
             <option value="">Crescente</option>
             <option value="">Decrescente</option>
           </select>
 
           <TbArrowsSort />
-        </div>
+        </div> */}
 
 
         <div className='cards-container'>
