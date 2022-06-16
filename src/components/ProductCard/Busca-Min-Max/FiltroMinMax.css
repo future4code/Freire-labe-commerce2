@@ -1,0 +1,47 @@
+
+
+.filter-card-value {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 15px;
+  
+    width: 100%;
+    height: fit-content;
+  
+    padding: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .filter-card-value > input {
+    width: 100%;
+    height: fit-content;
+    max-width: 200px;
+  
+    font-size: 1em;
+  
+    text-align: center;
+  
+    color: var(--cor-5);
+  
+    padding: 5px;
+    margin-bottom: 15px;
+  
+    background-color: var(--cor-3);
+  
+    outline: none;
+  
+    border: none;
+    border-radius: var(--borda-1);
+  
+    box-shadow: 0px 0px 5px var(--sombra-cor);
+  }
+  
+  .filter-card-value > .filter-input-text {
+    width: 100%;
+  }
+  
+  .filter-card-value > input::placeholder {
+    color: var(--cor-7);
+  }
