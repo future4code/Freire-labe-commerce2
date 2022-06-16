@@ -1,9 +1,9 @@
 import React from "react";
 import './ProductCard.css';
 
-export const ProductCard = (props) => {
+export const ProductCard = ({product, cartList, setCartList}) => {
     /*  Esse component realiza as seguintes ações:
-            Recebe os dados do produto (props) e o método de adicionar ao carrinho ();
+            Recebe os dados do produto (product) e o método de adicionar ao carrinho ();
             Renderiza o card com os dados do produto;
             Renderiza o botão de COMPRAR (ADICIONAR AO CARRINHO);
 
@@ -19,17 +19,23 @@ export const ProductCard = (props) => {
             - img: imagem do produto;
             - description: descrição do produto (usada no alt da imagem);
     */
+
+    const handleClick = () => {
+        setCartList([...cartList, product]);
+    }
     
     return (
         <div className='card'>
             <div className='card-img'>
-                <img src={props.img} alt={props.description}/>
+                <img src={product.img} alt={product.description}/>
             </div>
 
-            <h3>{props.name}</h3>
-            <h1>{props.price}</h1>
+            <h3>{product.name}</h3>
+            <h1>{product.price}</h1>
 
-            <button>COMPRAR</button>
+            <button onClick={handleClick}>
+                COMPRAR
+            </button>
         </div>
 
     )
