@@ -7,6 +7,7 @@ import { VscRocket } from 'react-icons/vsc';
 import { GiExplodingPlanet } from 'react-icons/gi';
 import { MdOutlineLocalGroceryStore } from 'react-icons/md';
 import { TbArrowsSort } from 'react-icons/tb';
+import { Search } from './components/Search/Search';
 
 
 
@@ -25,7 +26,26 @@ function inputFilterMin (event) {
 
 }
 
-
+  const initialDetails = [
+    {
+      id: 1,
+      img: "https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp",
+      name: "Nike",
+      preco: "200,00"
+    },
+    {
+      id: 2,
+      img: "https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp",
+      name: "Adidas",
+      preco: "300,00"
+    },
+    {
+      id: 3,
+      img: "https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp",
+      name: "Lacoste",
+      preco: "100,00"
+    }
+  ];
   return (
     <div className="App">
       <header className="App-header">
@@ -35,16 +55,17 @@ function inputFilterMin (event) {
           <h1>T-shirt Space</h1>
           <h5>Do espaço direto pra vc!</h5>
         </div>
-        
+
         <VscRocket />
       </header>
 
       <div className="App-body">
 
         {/*COMPONENTE 1 - Rai*/}
-        <div className='search-input'>
+        <Search details={initialDetails} />
+        {/* <div className='search-input'>
           <input type="text" placeholder='Pesquisar'/>
-        </div>
+        </div> */}
 
         {/*COMPONENTE 2 - Muri*/}
 {/*          <div className='filter-card-value'>
@@ -63,7 +84,7 @@ function inputFilterMin (event) {
             <option value="">Crescente</option>
             <option value="">Decrescente</option>
           </select>
-          
+
           <TbArrowsSort />
         </div>
 
