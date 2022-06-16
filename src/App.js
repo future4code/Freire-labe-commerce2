@@ -7,6 +7,8 @@ import { GiExplodingPlanet } from 'react-icons/gi';
 import { MdOutlineLocalGroceryStore } from 'react-icons/md';
 import { TbArrowsSort } from 'react-icons/tb';
 
+import { ProductCard } from './components/ProductCard/ProductCard';
+
 function App() {
   return (
     <div className="App">
@@ -46,7 +48,7 @@ function App() {
 
 
         <div className='cards-container'>
-          {/*COMPONENTE 4 - Lucas*/}
+          {/*COMPONENTE 4 - Lucas
           <div className='card'>
             <div className='card-img'>
               <img src="https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp" alt="" />
@@ -54,7 +56,16 @@ function App() {
             <h3>Producto 1</h3>
             <h1>R$200,00</h1>
             <button>Comprar</button>
-          </div>
+          </div>*/}
+
+          <ProductCard
+            key={1}
+            name='T-shirt Space'
+            price='R$ 100,00'
+            img='https://ae01.alicdn.com/kf/Hdb25259355544b639e6ba4fdd8c96d57t/Impresso-Espa-o-de-Experi-ncia-Dos-Homens-T-Shirt-de-Algod-o-camiseta-O-pesco.jpg_Q90.jpg_.webp'
+            description='Camisa Preta com estampa do Stitch tocando guitarra'
+          />
+
         </div>
       </div>
 
