@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './ShoppingCart.css';
 
 /*React Icons*/
@@ -19,6 +19,14 @@ export const ShoppingCart = ({cartList, setCartList}) => {
         return total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     }
 
+    /*Apaga todos os produtos do carrinho*/
+    const ClearShoppingCart = () => {
+        /*Confirmação de limpeza do carrinho*/
+        let confirmClear = window.confirm('Deseja limpar o carrinho?');
+        
+        confirmClear && setCartList([]);
+    }
+
     return (
         <div className='App-ShoppingCart'>
             {/*Trigger que controla o botão do carrinho de compras*/}
@@ -37,6 +45,18 @@ export const ShoppingCart = ({cartList, setCartList}) => {
             </div>
 
             <div className='Modal-ShoppingCart'>
+                <div className="Modal-ShoppingCart-header">
+                    <h1>Carrinho</h1>
+
+                    {/*Botão LIMPAR CARRINHO só aparece quando o carrinho tiver pelo menos um produto*/}
+                    {cartList.length > 0 &&
+                        <button className="Modal-ShoppingCart-clear" onClick={() => ClearShoppingCart()}>
+                            LIMPAR CARRINHO
+                        </button>
+                    }
+                </div>
+
+
                 {cartList.map((product) => (
                     <ItemCart
                         key={product.key}

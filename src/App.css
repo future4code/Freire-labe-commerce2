@@ -44,7 +44,7 @@
 /***************************/
 
 .App-header {
-  z-index: 10;
+  z-index: 5;
 
   display: flex;
   align-items: center;
@@ -87,6 +87,8 @@
 /***************************/
 
 .App-footer {
+  z-index: 10;
+
   display: flex;
   align-items: center;
   justify-content: center;

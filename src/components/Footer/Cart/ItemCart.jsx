@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './ItemCart.css';
 
 import { BsTrash } from "react-icons/bs";
@@ -13,14 +13,9 @@ export const ItemCart = ({product, cartList, setCartList}) => {
 
     /*Remove um produto do carrinho*/
     const removeProductToCart = (product) => {
-        let newCartList = cartList.filter(item => item.key !== product.key);
-        setCartList(newCartList);
-    }
+        let confirmRemove = window.confirm('Deseja remover o produto?');
 
-    /*Apaga todos os produtos do carrinho*/
-    const clearShoppingCart = (product) => {
-        const newCartList = cartList.filter(item => item.id !== product.id);
-        setCartList(newCartList);
+        confirmRemove && setCartList(cartList.filter(item => item.key !== product.key));
     }
 
     /*Incrementa a quantidade do produto clicando no button*/
