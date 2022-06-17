@@ -1,0 +1,142 @@
+:root {
+    --cor-1: #11151C;
+    --cor-2: #212D40;
+    --cor-3: #364156;
+    --cor-4: #7D4E57;
+    --cor-5: #D66853;
+    --cor-6: #EDF2F4;
+    --cor-7: #acb3ba;
+  
+    --sombra-cor: rgba(0, 0, 0, 0.500);
+  
+    --borda-1: 10px;
+}
+
+.App-ShoppingCart {
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 75px;
+
+    transition: all 0.3s ease-in-out;
+}
+  
+.App-ShoppingCart:hover {
+    height: 90px;
+}
+
+.App-ShoppingCart > #ShoppingCart-trigger {
+    z-index: 15;
+    
+    cursor: pointer;
+    appearance: none;
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+}
+
+.App-ShoppingCart > #ShoppingCart-trigger:checked ~ .Modal-ShoppingCart {
+    top: 0;
+}
+
+.App-ShoppingCart > .Navbar-ShoppingCart {
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    padding: 0 15px;
+
+    background-color: var(--cor-1);
+
+    box-shadow: 0px 0px 10px var(--sombra-cor);
+}
+
+.App-ShoppingCart > .Navbar-ShoppingCart > .cart-icon-count {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}   
+  
+.App-ShoppingCart > .Navbar-ShoppingCart > .cart-icon-count  > .cart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: fit-content;
+    height: 100%;
+
+    padding: 10px;
+
+    color: var(--cor-6);
+  
+    transition: all 0.3s ease-in-out;
+}
+
+.App-ShoppingCart > .Navbar-ShoppingCart > .cart-icon-count  > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: fit-content;
+    height: fit-content;
+  
+    font-size: 25px;
+
+    color: var(--cor-6);
+  
+    transition: all 0.3s ease-in-out;
+}
+
+.App-ShoppingCart > .Navbar-ShoppingCart > .cart-price-total {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 10px;
+
+    width: 100%;
+    height: 100%;
+  
+    padding: 15px;
+  
+    font-size: 20px;
+    font-weight: bold;
+
+    color: var(--cor-6);
+  
+    transition: all 0.3s ease-in-out;
+}
+  
+.Modal-ShoppingCart {
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    position: fixed;
+    top: 100vh;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 80px 0 ;
+
+    background-color: var(--cor-1);
+
+    transition: all 0.3s ease-in-out;
+}

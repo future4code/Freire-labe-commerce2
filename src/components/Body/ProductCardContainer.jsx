@@ -3,8 +3,8 @@ import './ProductCardContainer.css';
 
 import { ProductCard } from "./ProductCard";
 
-export const ProductCardContainer = ({details, cartList, setCartList}) => {
-    /*  Esse component realiza as seguintes ações:
+export const ProductCardContainer = ({ productsList, addProductToCart, cartList, setCartList }) => {
+        /*  Esse component realiza as seguintes ações:
             Recebe os dados do produto (props) e o método de adicionar ao carrinho ();
             Renderiza o card com os dados do produto;
             Renderiza o botão de COMPRAR (ADICIONAR AO CARRINHO);
@@ -24,19 +24,15 @@ export const ProductCardContainer = ({details, cartList, setCartList}) => {
     
     return (
         <div className='card-container'>
-            <ul>
-                <li>
-                    {details.map((product) => (
-                        <ProductCard
-                            key={product.key}
-                            product={product}
-
-                            cartList={cartList}
-                            setCartList={setCartList}
-                        />
-                    ))} 
-                </li>
-            </ul>
+            {productsList.map((product) => (
+                <ProductCard
+                    key={product.key}
+                    product={product}
+                    addProductToCart={addProductToCart}
+                    cartList={cartList}
+                    setCartList={setCartList}
+                />
+            ))}
         </div>
     )
 }
