@@ -7,17 +7,18 @@ import { MdShoppingCart } from 'react-icons/md';
 /*Components*/
 import { ItemCart } from "./ItemCart";
 
-export const ShoppingCart = ({cartList, setCartList}) => {
+export const ShoppingCart = ({cartList, setCartList, totalPriceCart, setTotalPriceCart}) => {
 
-    /*Soma o valor total do carrinho*/
-    const totalPriceCart = () => {
-        let total = 0;
+    /*Calcula o valor total dos produtos adicionados ao carrinho e mostra como monetário*/
+    useEffect(() => {
+        let totalPrice = 0;
+
         cartList.forEach(item => {
-            total += item.price * item.quantity;
+            totalPrice += item.price * item.quantity;
         });
-        
-        return total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    }
+
+        setTotalPriceCart(totalPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+    }, [cartList]);
 
     /*Apaga todos os produtos do carrinho*/
     const ClearShoppingCart = () => {
@@ -40,7 +41,7 @@ export const ShoppingCart = ({cartList, setCartList}) => {
 
                 <div className="cart-price-total">
                     <h4>TOTAL:</h4>
-                    <h1>{totalPriceCart()}</h1>
+                    <h1>{totalPriceCart}</h1>
                 </div>                
             </div>
 
@@ -55,6 +56,11 @@ export const ShoppingCart = ({cartList, setCartList}) => {
                         </button>
                     }
                 </div>
+
+                {/*Mensagem de carrinho vazio*/}
+                {cartList.length === 0 &&
+                    <h2>Carrinho vazio</h2>
+                }
 
 
                 {cartList.map((product) => (

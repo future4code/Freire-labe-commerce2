@@ -12,7 +12,7 @@ import { ShoppingCart } from './components/Footer/Cart/ShoppingCart'; //Botão d
 
 function App() {
 
-  /*Lista que armazena todos os produtos da loja*/
+  /*Armazena todos os produtos da loja*/
   const [productsList, setProductsList] = useState([{
     key: 1,
     name: 'Produto 1',
@@ -51,8 +51,11 @@ function App() {
     description: 'Descrição do produto 6'
   }]);
 
-  /*Lista que armazena os produtos que foram comprados*/
+  /*Armazena os produtos que foram adicionados ao carriniho*/
   const [cartList, setCartList] = useState([]);
+
+  /*Armazena o valor total dos produtos adicionados ao carrinho*/
+  const [totalPriceCart, setTotalPriceCart] = useState(0);
 
   return (
     <div className="App">
@@ -75,7 +78,12 @@ function App() {
       </div>
 
       <footer className='App-footer'>
-        <ShoppingCart cartList={cartList} setCartList={setCartList} />
+        <ShoppingCart 
+          cartList={cartList} 
+          setCartList={setCartList} 
+          totalPriceCart={totalPriceCart} 
+          setTotalPriceCart={setTotalPriceCart}
+        />
       </footer>
     </div>
   );
