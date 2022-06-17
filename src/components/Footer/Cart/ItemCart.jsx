@@ -33,15 +33,19 @@ export const ItemCart = ({product, cartList, setCartList}) => {
 
     /*Subtrai a quantidade do produto clicando no button*/
     const decrementProductQuantity = (product) => {
-        const newCartList = cartList.map(item => {
-            if (item.key === product.key) {
-                item.quantity -= 1;
-            }
+        if (product.quantity > 1) {
+            const newCartList = cartList.map(item => {
+                if (item.key === product.key) {
+                    item.quantity -= 1;
+                }
 
-            return item;
-        }).filter(item => item.quantity > 0);
+                return item;
+            });
 
-        setCartList(newCartList);
+            setCartList(newCartList);
+        } else {
+            removeProductToCart(product);
+        }
     }
 
     /*Função que apresenta o valor como monetário*/
@@ -87,11 +91,8 @@ export const ItemCart = ({product, cartList, setCartList}) => {
             </div>
                     
             <div className="cart-item-price">
-                <h3>
-                    {formatPriceMask(product.price)} und
-                </h3>
-                <h1>
-                    {formatPriceMask(finalProductPrice(product.price, product.quantity))}
+                <h3>{formatPriceMask(product.price)} und</h3>
+                <h1>{formatPriceMask(finalProductPrice(product.price, product.quantity))}
                 </h1>
             </div>
             
