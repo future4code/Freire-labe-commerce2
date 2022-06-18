@@ -1,23 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import './ShoppingCart.css';
 
 /*React Icons*/
-import { MdShoppingCart } from 'react-icons/md';
+import { MdShoppingCart, MdClose } from 'react-icons/md';
+import { IoIosRocket } from 'react-icons/io';
+import { AiOutlineClear } from 'react-icons/ai';
 
 /*Components*/
 import { ItemCart } from "./ItemCart";
 
-export const ShoppingCart = ({cartList, setCartList, totalPriceCart, setTotalPriceCart}) => {
+export const ShoppingCart = ({cartList, setCartList}) => {
 
-    /*Calcula o valor total dos produtos adicionados ao carrinho e mostra como monetário*/
+    /*Armazena o valor total dos produtos adicionados ao carrinho*/
+    const [totalPriceCart, setTotalPriceCart] = useState(0);
+
+    /*Calcula o valor total do carrinho e apresenta no formato de moeda sem o símbolo*/
     useEffect(() => {
-        let totalPrice = 0;
-
+        let total = 0;
         cartList.forEach(item => {
-            totalPrice += item.price * item.quantity;
+            total += item.price * item.quantity;
         });
-
-        setTotalPriceCart(totalPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }));
+        setTotalPriceCart(total.toFixed(2));
     }, [cartList]);
 
     /*Apaga todos os produtos do carrinho*/
@@ -28,33 +31,63 @@ export const ShoppingCart = ({cartList, setCartList, totalPriceCart, setTotalPri
         confirmClear && setCartList([]);
     }
 
+    /*Fecha a janela do carrinho*/
+    const CloseShoppingCart = () => {
+        document.getElementById('ShoppingCart-trigger').checked = false}
+
+    /*Faz o botão do carrinho aparecer quando comprar pelo menos 1 produto*/
+    useEffect(() => {
+        let shoppingCartButton = document.getElementById('btn-finish-buy');
+
+        if (cartList.length === 0) {
+            shoppingCartButton.style.width = '0px';
+            shoppingCartButton.style.padding = '0px';
+            shoppingCartButton.style.opacity = '0';
+        } else {
+            shoppingCartButton.style.width = 'fit-content';
+            shoppingCartButton.style.padding = '10px';
+            shoppingCartButton.style.opacity = '1';
+        }
+
+
+    }, [cartList]);
+
     return (
         <div className='App-ShoppingCart'>
             {/*Trigger que controla o botão do carrinho de compras*/}
             <input type="checkbox" id='ShoppingCart-trigger'/>
 
             <div className="Navbar-ShoppingCart">
-                <div className="cart-icon-count">
-                    <MdShoppingCart size={30} className='cart-icon'/>
-                    <span>{cartList.length}</span>
-                </div>
-
                 <div className="cart-price-total">
-                    <h4>TOTAL:</h4>
+                    <h2>R$: TOTAL</h2>
                     <h1>{totalPriceCart}</h1>
-                </div>                
+                </div> 
+
+                {/*Botão de finalizar compra*/}
+                <button className="btn-finish-buy" id="btn-finish-buy" onClick={ClearShoppingCart}>
+                    <div className="cart-icon-count">
+                        <MdShoppingCart size={30} className='cart-icon'/>
+                        <span>{cartList.length}</span>
+                    </div>
+                </button>               
             </div>
 
+            {/*Janela do carrinho*/}
             <div className='Modal-ShoppingCart'>
                 <div className="Modal-ShoppingCart-header">
-                    <h1>Carrinho</h1>
 
                     {/*Botão LIMPAR CARRINHO só aparece quando o carrinho tiver pelo menos um produto*/}
                     {cartList.length > 0 &&
                         <button className="Modal-ShoppingCart-clear" onClick={() => ClearShoppingCart()}>
-                            LIMPAR CARRINHO
+                            LIMPAR
+                            <AiOutlineClear className='clear-icon'/>
                         </button>
                     }
+
+                    {/*Botão FECHAR CARRINHO*/}
+                    <button className="Modal-ShoppingCart-close" onClick={() => CloseShoppingCart()}>
+                        <MdClose className='close-icon'/>
+                    </button>
                 </div>
 
                 {/*Mensagem de carrinho vazio*/}
