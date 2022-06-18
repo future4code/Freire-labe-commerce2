@@ -5,7 +5,7 @@ import './ProductFilter.css';
 import { ImFilter } from 'react-icons/im';
 import { TbArrowsSort } from 'react-icons/tb';
 
-export const ProductFilter = ({}) => {
+export const ProductFilter = () => {
     return (
         <div className='ProductFilter'>
             <input type="checkbox" id="ProductFilter-trigger" />

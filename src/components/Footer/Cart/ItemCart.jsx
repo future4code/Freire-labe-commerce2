@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import './ItemCart.css';
 
 import { BsTrash } from "react-icons/bs";

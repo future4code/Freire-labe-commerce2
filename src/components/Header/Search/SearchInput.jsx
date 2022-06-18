@@ -4,7 +4,7 @@ import './SearchInput.css';
 /*React Icons*/
 import { ImSearch } from 'react-icons/im';
 
-export const SearchInput = ({  }) => {
+export const SearchInput = () => {
     return (
         <div className='search-input'>
             <input type="search" placeholder='Pesquisar' />

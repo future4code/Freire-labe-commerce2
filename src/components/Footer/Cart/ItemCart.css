@@ -221,3 +221,121 @@
 
     color: var(--cor-6);
 }
+
+/***************************/
+/*     RESPONSIVENESS      */
+/***************************/
+
+@media screen and (max-width: 540px) {
+    .App-modal-itemCart {
+        flex-direction: column;
+        padding-top: 12px;
+        height: 95px;
+    }
+    
+    .App-modal-itemCart > .modal-itemCart-left {    
+        width: fit-content;
+    }
+    
+    .App-modal-itemCart > .modal-itemCart-left > .cart-item-trash {
+        position: absolute;
+        left: 2%;
+        
+        width: fit-content;
+        height: 75px;
+
+        margin-top: 67px;
+        padding: 0;
+
+        font-size: 40px;
+    }
+    
+    .App-modal-itemCart > .modal-itemCart-left > img { 
+        position: absolute;
+        left: 50px;
+
+        width: 60px;
+        height: 75px;
+
+        margin-top: 67px;
+    }
+      
+    .App-modal-itemCart > .modal-itemCart-left > .cart-item-infos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        width: fit-content;
+        margin-top: -5px;
+    }
+    
+    .App-modal-itemCart > .modal-itemCart-left > .cart-item-infos > .cart-item-name {
+        position: absolute;
+        right: 2%;
+    
+        margin-top: 20px;
+    
+        width:fit-content;
+    }
+    
+    .App-modal-itemCart > .modal-itemCart-left > .cart-item-infos > .cart-item-size-amount {
+        position: absolute;
+        left: 118px;
+
+        flex-direction: column;
+        gap: 7px;
+        
+        width: fit-content;
+        height: fit-content;
+
+        margin-top: 70px;
+    }
+    
+    .App-modal-itemCart > .modal-itemCart-left > .cart-item-infos > .cart-item-size-amount > .cart-item-size {    
+        width: 60px;
+        height: 32px;
+    
+        padding: 3px;
+    
+        font-size: 16px;
+    }
+    
+    .App-modal-itemCart > .modal-itemCart-left > .cart-item-infos > .cart-item-size-amount > .cart-item-amount {
+        column-gap: 3px;
+    
+        width: 60px;
+        height: 32px;
+    
+        font-size: 16px;
+    }
+    
+    .App-modal-itemCart > .modal-itemCart-left > .cart-item-infos > .cart-item-size-amount > .cart-item-amount >button {
+        font-size: 15px;
+    }
+    
+    .App-modal-itemCart > .cart-item-price {
+        position: absolute;
+        right: 2%;
+    
+        width: fit-content;
+        height: fit-content;
+
+        margin-top: 25px;
+    }
+    
+    .App-modal-itemCart > .cart-item-price > h3 {
+        margin-bottom: -15px;    
+        padding-top: 0px;
+        padding-right: 0px;
+    }
+    
+    .App-modal-itemCart > .cart-item-price > h1 {
+        font-size: 30px;
+    
+        width: 100%;
+    
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+}

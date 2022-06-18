@@ -6,10 +6,6 @@
     --cor-5: #D66853;
     --cor-6: #EDF2F4;
     --cor-7: #acb3ba;
-  
-    --sombra-cor: rgba(0, 0, 0, 0.500);
-  
-    --borda-1: 10px;
 }  
 
 .search-input {
@@ -27,7 +23,7 @@
     width: 150px;
     height: fit-content;
   
-    padding: 5px 0;
+    padding: 6px 0;
     padding-right: 40px;
     padding-left: 10px;
   
@@ -68,4 +64,32 @@
     margin-left: -32px;
 
     color: var(--cor-7);
+}
+
+/***************************/
+/*     RESPONSIVENESS      */
+/***************************/
+
+@media screen and (max-width: 479px) {
+    .search-input {      
+        grid-column-start: 1;
+        grid-column-end: 5;
+        width: 99%;
+        height: fit-content;
+        margin-left: 15px;
+        margin-right: 20px;
+        margin-top: 5px;
+    }
+      
+    .search-input > input {    
+        width: 100%;
+        height: fit-content; 
+        margin-right: 0px;     
+        padding: 3px 10px;   
+        font-size: 1.2em;
+    }
+    
+    .search-input > .searchIcon {    
+        display: none; 
+    }
 }
