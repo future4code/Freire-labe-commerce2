@@ -13,7 +13,7 @@ import { ShoppingCart } from './components/Footer/Cart/ShoppingCart'; //Botão d
 function App() {
 
   /*Armazena todos os produtos da loja*/
-  const [productsList] = useState([{
+  const [productsList,setProductsList] = useState([{
     key: 1,
     name: 'Produto 1',
     price: 150,
@@ -57,11 +57,10 @@ function App() {
   /*Armazena o valor total dos produtos adicionados ao carrinho*/
   const [totalPriceCart, setTotalPriceCart] = useState(0);
 
-  const [selectedBrand, setSelectedBrand] = useState("MAIOR");
+  const [selectedBrand, setSelectedBrand] = useState("MENOR");
 
   const [minimo, setMinimo] = useState(0);
-  const [maximo, setMaximo] = useState(500);
-
+  const [maximo, setMaximo] = useState(1000);
 
   return (
     <div className="App">
