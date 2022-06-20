@@ -13,7 +13,7 @@ import { ShoppingCart } from './components/Footer/Cart/ShoppingCart'; //Botão d
 function App() {
 
   /*Armazena todos os produtos da loja*/
-  const [productsList, setProductsList] = useState([{
+  const [productsList] = useState([{
     key: 1,
     name: 'Produto 1',
     price: 150,
@@ -96,7 +96,7 @@ function App() {
         <ShoppingCart 
           cartList={cartList} 
           setCartList={setCartList} 
-          totalPriceCart={totalPriceCart} 
+          totalPriceCart={totalPriceCart}
           setTotalPriceCart={setTotalPriceCart}
         />
       </footer>

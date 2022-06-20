@@ -6,10 +6,6 @@
     --cor-5: #D66853;
     --cor-6: #EDF2F4;
     --cor-7: #acb3ba;
-  
-    --sombra-cor: rgba(0, 0, 0, 0.500);
-  
-    --borda-1: 10px;
 }
 
 .ProductFilter {
@@ -19,8 +15,18 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 100%;
+
+    width: fit-content;
+    height: fit-content;
+    
+    padding: 10px;
+
+    outline: none;
+
+    border: none;
+    border-radius: var(--borda-1);
+
+    background-color: var(--cor-3);
 }
 
 .ProductFilter > #ProductFilter-trigger {
@@ -39,7 +45,7 @@
 }
 
 .ProductFilter > svg {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .ProductFilter >.ProductFilter-container {
@@ -54,7 +60,7 @@
     width: 220px;
     height: 100%;
 
-    padding: 15px;
+    padding: 20px;
 
     background-color: var(--cor-2);
 
@@ -111,6 +117,7 @@
 
     margin-top: -35px;
     margin-left: 140px;
+    margin-bottom: 15px;
 }
 
 .ProductFilter >.ProductFilter-container > input {
@@ -130,4 +137,40 @@
     background-color: transparent;
 
     color: var(--cor-5);
+}
+
+/***************************/
+/*     RESPONSIVENESS      */
+/***************************/
+
+@media screen and (max-width: 479px) {
+    .ProductFilter {
+        grid-column-start: 5;
+        width: 36px;
+        height: 36px;
+        margin-top: 5px;
+    }
+    
+    .ProductFilter > #ProductFilter-trigger {
+        width: 35px;
+    }
+    
+    .ProductFilter > svg {
+        font-size: 20px;
+    }
+    
+    .ProductFilter >.ProductFilter-container {
+        top: 100px;
+        right: -100%;    
+        width: 100%;
+    }
+    
+    .ProductFilter >.ProductFilter-container > select {
+        width: 200px;
+        height: 40px;
+    }
+    
+    .ProductFilter >.ProductFilter-container > input {
+        margin-bottom: 10px;
+    }
 }

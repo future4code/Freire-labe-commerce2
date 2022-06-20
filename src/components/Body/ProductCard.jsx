@@ -39,9 +39,6 @@ export const ProductCard = ({ product, cartList, setCartList }) => {
         if (productExists) {
             const newCartList = cartList.map(item => {
                 if (item.key === product.key) {
-
-                    {console.log(item.quantity)}
-
                     item.quantity += 1;
                 }
 
@@ -67,8 +64,10 @@ export const ProductCard = ({ product, cartList, setCartList }) => {
                 <img src={product.img} alt={product.description}/>
             </div>
 
-            <h3>{product.name}</h3>
-            <h1>{priceProductMask()}</h1>
+            <div className="card-text">
+                <h3>{product.name}</h3>
+                <h1>{priceProductMask()}</h1>
+            </div>
 
             <button onClick={() => addProductToCart(product)}>
                 COMPRAR

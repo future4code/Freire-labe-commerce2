@@ -5,6 +5,7 @@ import './ProductFilter.css';
 import { ImFilter } from 'react-icons/im';
 import { TbArrowsSort } from 'react-icons/tb';
 
+
 export const ProductFilter = ({ 
         setSelectedBrand, selectedBrand,
         minimo, setMinimo,
