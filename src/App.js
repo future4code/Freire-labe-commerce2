@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
 
-/*React Icons*/
-
 /*Components*/
 import { AppLogo } from './components/Header/Logo/AppLogo'; //Logo e título do site
 import { SearchInput } from './components/Header/Search/SearchInput'; //Caixa de pesquisa por nome do produto
@@ -15,38 +13,38 @@ function App() {
   /*Armazena todos os produtos da loja*/
   const [productsList,setProductsList] = useState([{
     key: 1,
-    name: 'Produto 1',
-    price: 150,
+    name: 'Camisa 1',
+    price: 15,
     img: 'https://picsum.photos/200/300/?1',
     description: 'Descrição do produto 1'
   }, {
     key: 2,
-    name: 'Produto 2',
-    price: 250.30,
+    name: 'Camisa 2',
+    price: 25,
     img: 'https://picsum.photos/200/300/?2',
     description: 'Descrição do produto 2'
   }, {
     key: 3,
-    name: 'Produto 3',
-    price: 350.50,
+    name: 'Camisa 3',
+    price: 35,
     img: 'https://picsum.photos/200/300/?3',
     description: 'Descrição do produto 3'
   }, {
     key: 4,
-    name: 'Produto 4',
-    price: 450.70,
+    name: 'Camisa 4',
+    price: 45,
     img: 'https://picsum.photos/200/300/?4',
     description: 'Descrição do produto 4'
   }, {
     key: 5,
-    name: 'Produto 5',
-    price: 550.90,
+    name: 'Camisa 5',
+    price: 55,
     img: 'https://picsum.photos/200/300/?5',
     description: 'Descrição do produto 5'
   }, {
     key: 6,
-    name: 'Produto 6',
-    price: 650.00,
+    name: 'Camisa 6',
+    price: 65,
     img: 'https://picsum.photos/200/300/?6',
     description: 'Descrição do produto 6'
   }]);

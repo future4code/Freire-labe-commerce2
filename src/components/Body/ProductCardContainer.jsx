@@ -41,9 +41,9 @@ export const ProductCardContainer = ({ productsList, selectedBrand, addProductTo
                             return currentProduct.price - nextProduct.price
                         case "MAIOR":
                             return nextProduct.price - currentProduct.price
-                        case "CRESCENTE":
-                            return nextProduct.name.localeCompare(currentProduct.name)
                         case "DECRESCENTE":
+                            return nextProduct.name.localeCompare(currentProduct.name)
+                        case "CRESCENTE":
                             return -1 * nextProduct.name.localeCompare(currentProduct.name)
                         default:
                             return currentProduct.name - nextProduct.name
