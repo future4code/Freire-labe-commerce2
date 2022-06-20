@@ -12,6 +12,18 @@
     --borda-1: 10px;
 }
 
+.empty-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: var(--cor-6);
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
 .App-ShoppingCart {
     z-index: 10;
 

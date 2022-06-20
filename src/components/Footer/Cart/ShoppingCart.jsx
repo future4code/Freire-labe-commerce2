@@ -92,7 +92,7 @@ export const ShoppingCart = ({cartList, setCartList}) => {
 
                 {/*Mensagem de carrinho vazio*/}
                 {cartList.length === 0 &&
-                    <h2>Carrinho vazio</h2>
+                    <h2 className="empty-cart">Carrinho vazio</h2>
                 }
 
 
