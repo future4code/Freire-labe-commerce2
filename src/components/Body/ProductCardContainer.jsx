@@ -3,7 +3,7 @@ import './ProductCardContainer.css';
 
 import { ProductCard } from "./ProductCard";
 
-export const ProductCardContainer = ({ productsList, selectedBrand, addProductToCart, cartList, setCartList,minimo,maximo }) => {
+export const ProductCardContainer = ({ productsList, selectedBrand, addProductToCart, cartList, setCartList, minimo, maximo, query }) => {
     /*  Esse component realiza as seguintes ações:
         Recebe os dados do produto (props) e o método de adicionar ao carrinho ();
         Renderiza o card com os dados do produto;
@@ -24,36 +24,40 @@ export const ProductCardContainer = ({ productsList, selectedBrand, addProductTo
 
     return (
         <div className='card-container'>
-            {productsList.filter(product => {
-                  return minimo === "" || product.price >= minimo
-               })
-               .filter(product => {
-                  return maximo === "" || product.price <= maximo
-               })
-               .sort((currentProduct, nextProduct) => {
-                   console.log(selectedBrand)
-                  switch (selectedBrand) {
-                     case "MENOR":
-                        return currentProduct.price - nextProduct.price
-                     case "MAIOR":
-                        return nextProduct.price - currentProduct.price
-                    case "CRESCENTE":
-                        return nextProduct.name.localeCompare(currentProduct.name)
-                    case "DECRESCENTE":
-                        return -1 * nextProduct.name.localeCompare(currentProduct.name)
-                     default:
-                        return currentProduct.name - nextProduct.name
-                  }
-               })
-               .map(product => {
-                  return <ProductCard 
-                    key={product.id} 
-                    product={product}
-                    addProductToCart = { addProductToCart }
-                    cartList = { cartList }
-                    setCartList = { setCartList }
-                />
-               })}
+            {productsList
+                .filter(product => {
+                    return product.name.toLowerCase().includes(query.toLowerCase())
+                })
+                .filter(product => {
+                    return minimo === "" || product.price >= minimo
+                })
+                .filter(product => {
+                    return maximo === "" || product.price <= maximo
+                })
+                .sort((currentProduct, nextProduct) => {
+                    console.log(selectedBrand)
+                    switch (selectedBrand) {
+                        case "MENOR":
+                            return currentProduct.price - nextProduct.price
+                        case "MAIOR":
+                            return nextProduct.price - currentProduct.price
+                        case "CRESCENTE":
+                            return nextProduct.name.localeCompare(currentProduct.name)
+                        case "DECRESCENTE":
+                            return -1 * nextProduct.name.localeCompare(currentProduct.name)
+                        default:
+                            return currentProduct.name - nextProduct.name
+                    }
+                })
+                .map(product => {
+                    return <ProductCard
+                        key={product.id}
+                        product={product}
+                        addProductToCart={addProductToCart}
+                        cartList={cartList}
+                        setCartList={setCartList}
+                    />
+                })}
         </div>
     )
 }

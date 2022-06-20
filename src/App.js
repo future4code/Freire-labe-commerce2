@@ -62,12 +62,18 @@ function App() {
   const [minimo, setMinimo] = useState(0);
   const [maximo, setMaximo] = useState(1000);
 
+  const [query, setQuery] = useState("");
+
   return (
     <div className="App">
       <header className="App-header">
         <AppLogo />
 
-        <SearchInput />
+        <SearchInput 
+          query = {query}
+          setQuery = {setQuery}
+
+        />
 
         <ProductFilter 
           setProductsList={setProductsList}
@@ -77,6 +83,8 @@ function App() {
           setMinimo={setMinimo}
           maximo={maximo}
           setMaximo={setMaximo}
+          query = {query}
+          setQuery = {setQuery}
         />
       </header>
 
@@ -88,6 +96,7 @@ function App() {
           setCartList={setCartList}
           minimo={minimo}
           maximo={maximo}
+          query={query}
         />
       </div>
 
