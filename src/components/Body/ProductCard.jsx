@@ -25,7 +25,6 @@ export const ProductCard = ({ product, cartList, setCartList }) => {
         /*Cria um novo objeto com os dados do produto*/
         const newProduct = {
             key: product.key,
-            key: product.key,
             name: product.name,
             price: product.price,
             img: product.img,
