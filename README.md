@@ -24,13 +24,13 @@ It simulates a space-themed shirt store website, and required the following cond
 
 | Color             | HEX |
 | ----------------- | ------------------------------------|
-| Rich Black FOGRA 29 | |#11151C|
-| Prussian Blue | |#212D40|
-| Charcoal | |#364156|
-| Tuscan Red | |#7D4E57|
-| Copper Red | |#D66853|
-| Cultured | |#EDF2F4|
-| Cadet Blue Crayola | |#ACB3BA|
+| Rich Black FOGRA 29 |#11151C|
+| Prussian Blue |#212D40|
+| Charcoal |#364156|
+| Tuscan Red |#7D4E57|
+| Copper Red |#D66853|
+| Cultured |#EDF2F4|
+| Cadet Blue Crayola |#ACB3BA|
 
 
 ## Demo
