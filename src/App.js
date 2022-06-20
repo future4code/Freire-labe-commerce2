@@ -13,41 +13,41 @@ import { ShoppingCart } from './components/Footer/Cart/ShoppingCart'; //Botão d
 function App() {
 
   /*Armazena todos os produtos da loja*/
-  const [productsList] = useState([{
+  const [productsList,setProductsList] = useState([{
     key: 1,
     name: 'Produto 1',
     price: 150,
-    img: 'https://picsum.photos/200/300/?random',
+    img: 'https://picsum.photos/200/300/?1',
     description: 'Descrição do produto 1'
   }, {
     key: 2,
     name: 'Produto 2',
     price: 250.30,
-    img: 'https://picsum.photos/200/300/?random',
+    img: 'https://picsum.photos/200/300/?2',
     description: 'Descrição do produto 2'
   }, {
     key: 3,
     name: 'Produto 3',
     price: 350.50,
-    img: 'https://picsum.photos/200/300/?random',
+    img: 'https://picsum.photos/200/300/?3',
     description: 'Descrição do produto 3'
   }, {
     key: 4,
     name: 'Produto 4',
     price: 450.70,
-    img: 'https://picsum.photos/200/300/?random',
+    img: 'https://picsum.photos/200/300/?4',
     description: 'Descrição do produto 4'
   }, {
     key: 5,
     name: 'Produto 5',
     price: 550.90,
-    img: 'https://picsum.photos/200/300/?random',
+    img: 'https://picsum.photos/200/300/?5',
     description: 'Descrição do produto 5'
   }, {
     key: 6,
     name: 'Produto 6',
     price: 650.00,
-    img: 'https://picsum.photos/200/300/?random',
+    img: 'https://picsum.photos/200/300/?6',
     description: 'Descrição do produto 6'
   }]);
 
@@ -57,23 +57,46 @@ function App() {
   /*Armazena o valor total dos produtos adicionados ao carrinho*/
   const [totalPriceCart, setTotalPriceCart] = useState(0);
 
+  const [selectedBrand, setSelectedBrand] = useState("MENOR");
+
+  const [minimo, setMinimo] = useState(0);
+  const [maximo, setMaximo] = useState(1000);
+
+  const [query, setQuery] = useState("");
+
   return (
     <div className="App">
       <header className="App-header">
         <AppLogo />
 
-        <SearchInput />
+        <SearchInput 
+          query = {query}
+          setQuery = {setQuery}
 
-        <ProductFilter />
-        
+        />
+
+        <ProductFilter 
+          setProductsList={setProductsList}
+          selectedBrand = {selectedBrand}
+          setSelectedBrand = {setSelectedBrand}
+          minimo={minimo}
+          setMinimo={setMinimo}
+          maximo={maximo}
+          setMaximo={setMaximo}
+          query = {query}
+          setQuery = {setQuery}
+        />
       </header>
 
       <div className="App-body">          
         <ProductCardContainer
           productsList={productsList}
-
+          selectedBrand = {selectedBrand}
           cartList={cartList}
           setCartList={setCartList}
+          minimo={minimo}
+          maximo={maximo}
+          query={query}
         />
       </div>
 
